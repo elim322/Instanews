@@ -3,10 +3,28 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename');
     browserSync = require('browser-sync');
+    sass = require("gulp-sass"),
+    autoprefixer = require("gulp-autoprefixer"),
+    cssnano = require("gulp-cssnano"),
+    prettyError = require("gulp-prettyerror"),
+    {src, task} = require('gulp');
+    eslint = require('gulp-eslint');
 
-const {src, task} = require('gulp');
-const eslint = require('gulp-eslint');
-
+    gulp.task("sass", function() {
+        return gulp
+          .src("./sass/style.scss")
+          .pipe(prettyError()) // ADD THIS LINE
+          .pipe(sass())
+          .pipe(
+            autoprefixer({
+              browsers: ["last 2 versions"]
+            })
+          )
+          .pipe(gulp.dest("./build/css"))
+          .pipe(cssnano())
+          .pipe(rename("style.min.css"))
+          .pipe(gulp.dest("./build/css"));
+      });
 //linting task 
 gulp.task('lint', function() {
     return src(['scripts/*.js'])
@@ -39,13 +57,15 @@ gulp.task('browser-sync', function() {
     });
 
 gulp
-    .watch(['build/js/*.js', '*.html'])
+    .watch(['build/**/*', '*.html'])
     .on('change', browserSync.reload);
 });
 
 gulp.task("watch", function(){
-    gulp.watch("js/*.js", gulp.series("scripts"));
+    gulp.watch("js/*.js", gulp.series("scripts") )
+    gulp.watch("sass/**/*.scss" , gulp.series("sass"));
 });
 
 
-gulp.task("default", gulp.parallel("browser-sync", "watch"))
+gulp.task("default", gulp.parallel("browser-sync", "watch"));
+
