@@ -28,16 +28,29 @@ $(document).ready(function() {
         // console.log(data);
         var formattedData = data.results;
         console.log(data.results);
+     
+  
 
        $.each(formattedData, function(key, value){
-        //  console.log(value.url)
-        //  console.log(value.abstract)
-        //  console.log(value.media)
-         var html = "<div class='articles'>"
+         var html = "<div class='articles' id='articles'>"
          html += "<a target= '_blank' href=" + value.url + ">"
          html += "<img class='article-image' src=" + value.multimedia[4].url + ">"
-         html += "<p>" + value.abstract + "</p>" + "</a>"
-         html += "</div>"
+         html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>"
+         html += "</div>" // adding url, images, and abstract to html 
+        
+         // var artLink = value.url;
+        // var artMedia = value.multimedia[4].url;
+        // var artText = value.abstract;
+        // var html = '';
+
+        //  html += '<a href ='+ artLink + '>'
+        //  html += '<div class="articles" id="articles">'
+        //  html += '<div class="bg-pic" style="background-image: url(' + artMedia + ')">'
+        //  html += '<div class="artText">';
+        //  html += '<p>' + artText + '</p></div></div>';
+        //  html += '</a>' 
+        
+           
 
       
 
