@@ -36,6 +36,11 @@ select #categories {
 .option-selector-items p {
   color: white; }
 
+#gif-loader {
+  display: none;
+  height: 100px;
+  width: 100px; }
+
 .articles {
   height: 50%;
   width: 100%;

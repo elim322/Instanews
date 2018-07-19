@@ -9,6 +9,7 @@ $(document).ready(function() {
     // console.log("selectedStory");
 
     $(".article-boxes").empty();
+    // $(".gif-loader").show();
 
     var url = "https://api.nytimes.com/svc/topstories/v2/" + selectedStory  +  ".json";
     url +=
@@ -28,7 +29,11 @@ $(document).ready(function() {
         // console.log(data);
         var formattedData = data.results;
         console.log(data.results);
-     
+        // $(".gif-loader").on(click, function(){
+          
+        // });
+        
+        $('#gif-loader').css('display','none');
   
 
        $.each(formattedData, function(key, value){
@@ -37,18 +42,8 @@ $(document).ready(function() {
          html += "<img class='article-image' src=" + value.multimedia[4].url + ">"
          html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>"
          html += "</div>" // adding url, images, and abstract to html 
-        
-         // var artLink = value.url;
-        // var artMedia = value.multimedia[4].url;
-        // var artText = value.abstract;
-        // var html = '';
 
-        //  html += '<a href ='+ artLink + '>'
-        //  html += '<div class="articles" id="articles">'
-        //  html += '<div class="bg-pic" style="background-image: url(' + artMedia + ')">'
-        //  html += '<div class="artText">';
-        //  html += '<p>' + artText + '</p></div></div>';
-        //  html += '</a>' 
+         
         
            
 
@@ -62,6 +57,10 @@ $(document).ready(function() {
       .fail(function(err) {
         throw err;
       }).always(function(){
+        $('#categories').click(function(){
+        $('#gif-loader').css('display','block');
+           });
+        
 // try removing or reloading the loading gif
       });
   }); // #top-stories change event
