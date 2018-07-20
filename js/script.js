@@ -50,7 +50,7 @@ $(document).ready(function() {
           // console.log(value.multimedia[4].url);
           $(".article-boxes").append(html);
         });
-        //try using $.each to loop through the data and check out the array in data called results & try appending the output to your html
+       
       })
       .fail(function(err) {
         console.log("request failed");
@@ -60,7 +60,7 @@ $(document).ready(function() {
         console.log("always run");
         $("#gif-loader").css("display", "none");
 
-        // try removing or reloading the loading gif
+     
       });
   }); // #top-stories change event
 }); //end of doc ready

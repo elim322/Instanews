@@ -12,18 +12,18 @@
   justify-content: center; 
   flex-wrap: wrap; 
   padding: 2rem; 
-  // @include tablet {
-  //   text-align: left;
-  // }
 }
 
 .site-header-small {
-  background-color: pink; 
+  background-color: black; 
+  @media screen and(min-width: 600px) {
+    padding: 0; 
+  }
 }
 
 img {
   height: auto; 
-  max-width: 100%; 
+  max-width: 50vw; 
 }
 
 body {
@@ -58,38 +58,52 @@ select {
   width: 100px;
 }
 
-// .article-boxes {
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center; 
-// }
+.article-boxes {
+  display: flex;
+  flex-wrap: wrap; 
+  @media screen and (min-width: 600px) {
+    .article-boxes {
+      flex-direction: row; 
+      
+    }
+  }
+}
 
 .articles {
-  height: 700px;
+  display: block; 
+  background-position: 50%;
+  height: 420px;
   width: 100%;
   position: relative; 
+  @media screen and (min-width: 600px){
+  max-width: 50%;
+  height: 420px; 
+  position: relative; 
+  }
+  @media screen and (min-width: 1000px) {
+    max-width: 33%; 
+    height: 420px; 
+  }
 
 }
 
-// .article-image {
-//   height: 50%; 
-//   width: 50%; 
-// }
-
 .abstract {
-  width: 50%; 
+  width: 100%; 
   height: auto; 
-  position: absolute; 
-  z-index: 1; 
+  position: absolute;
   bottom: 0;
   color: white; 
-  background-color: rgba(0, 0 ,0.5, 0.3); 
+  background-color: rgba(0, 0 ,0.5, 0.5); 
   
 }
 
 footer {
   display: flex; 
   justify-content: center;
+  @media screen and (min-width: 1000px) {
+    justify-content: left;
+    margin-left: 10px; 
+  }
 }
 .copyright {
   color: #c2c2c2;
