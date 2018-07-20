@@ -27,19 +27,22 @@ $(document).ready(function() {
       .done(function(data) {
         //data just represents the returned object from NYT api 
         // console.log(data);
-        var formattedData = data.results;
-        console.log(data.results);
-        // $(".gif-loader").on(click, function(){
-          
-        // });
+        // var formattedData = data.results;
+        // console.log(data.results);
+       
+        var onlyImg = data.results
+         .filter(function(result) {
+          return result.multimedia.length; 
+        })
+        .slice(0, 12);
         
-        $('#gif-loader').css('display','none');
+        // $('#gif-loader').css('display','none');
   
 
-       $.each(formattedData, function(key, value){
+       $.each(onlyImg, function(key, value){
          var html = "<div class='articles' id='articles'>"
          html += "<a target= '_blank' href=" + value.url + ">"
-         html += "<img class='article-image' src=" + value.multimedia[4].url + ">"
+         html += "<img class='article-image' style='background: url(" + value.multimedia[4].url + "); background-size: cover;'>"
          html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>"
          html += "</div>" // adding url, images, and abstract to html 
 
@@ -48,14 +51,14 @@ $(document).ready(function() {
            
 
       
-
+console.log(value.multimedia[4].url);
          $(".article-boxes").append(html);
-       }) 
+       });
        //try using $.each to loop through the data and check out the array in data called results & try appending the output to your html
 
       })
       .fail(function(err) {
-        throw err;
+        $alert('.article-boxes').append('<h3' + 'Sorry there was an error' + '</h3>')
       }).always(function(){
         $('#categories').click(function(){
         $('#gif-loader').css('display','block');

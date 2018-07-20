@@ -54,19 +54,26 @@ select {
   width: 100px;
 }
 
+// .article-boxes {
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center; 
+// }
+
 .articles {
-  height: 50%;
+  height: 100%;
   width: 100%;
   position: relative; 
+
 }
 
-.article-image {
-  height: 50%; 
-  width: 100%; 
-}
+// .article-image {
+//   height: 50%; 
+//   width: 50%; 
+// }
 
 .abstract {
-  width: 100%; 
+  width: 50%; 
   height: auto; 
   position: absolute; 
   z-index: 1; 

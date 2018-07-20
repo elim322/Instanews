@@ -42,16 +42,12 @@ select #categories {
   width: 100px; }
 
 .articles {
-  height: 50%;
+  height: 100%;
   width: 100%;
   position: relative; }
 
-.article-image {
-  height: 50%;
-  width: 100%; }
-
 .abstract {
-  width: 100%;
+  width: 50%;
   height: auto;
   position: absolute;
   z-index: 1;
