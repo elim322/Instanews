@@ -14,6 +14,9 @@
       flex-wrap: wrap;
   padding: 2rem; }
 
+.site-header-small {
+  background-color: pink; }
+
 img {
   height: auto;
   max-width: 100%; }
