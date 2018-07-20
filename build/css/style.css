@@ -42,7 +42,7 @@ select #categories {
   width: 100px; }
 
 .articles {
-  height: 100%;
+  height: 700px;
   width: 100%;
   position: relative; }
 
