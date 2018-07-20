@@ -40,11 +40,11 @@ $(document).ready(function() {
   
 
        $.each(onlyImg, function(key, value){
-         var html = "<div class='articles' id='articles'>"
-         html += "<a target= '_blank' href=" + value.url + ">"
-         html += "<img class='article-image' style='background: url(" + value.multimedia[4].url + "); background-size: cover;'>"
-         html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>"
-         html += "</div>" // adding url, images, and abstract to html 
+         var html = "<div class='articles' id='articles' style='background: url(" + value.multimedia[4].url + "); background-size: cover;>";
+         html += "<a target= '_blank' href=" + value.url + ">";
+         html += "<img class='article-image>";
+         html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>";
+         html += "</div>"; // adding url, images, and abstract to html 
 
          
         
