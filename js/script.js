@@ -39,13 +39,16 @@ $(document).ready(function() {
         // $('#gif-loader').css('display','none');
 
         $.each(onlyImg, function(key, value) {
-          var html =
+          var html = "<a target= '_blank' href=" + value.url + ">" +
             "<div class='articles' id='articles' style='background: url(" +
-            value.multimedia[4].url +
+            value.multimedia[4].url + 
             "); background-size: cover;>";
-          html += "<a target= '_blank' href=" + value.url + ">";
-          html += "<p class='abstract'>" + value.abstract + "</p>" + "</a>";
-          html += "</div>"; // adding url, images, and abstract to html
+          
+          html += "<p class='abstract'>" + value.abstract + "</p>"
+          
+          html += "</div>" 
+
+          html += "</a>"; 
 
           // console.log(value.multimedia[4].url);
           $(".article-boxes").append(html);
