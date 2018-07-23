@@ -8,6 +8,7 @@
 }
 
 .site-header {
+  align-content: center; 
   display: flex; 
   justify-content: center; 
   flex-wrap: wrap; 
@@ -18,7 +19,8 @@
 }
 
 .site-header-small {
-  background-color: black; 
+  background-color: black;
+  align-content: center;  
   @media screen and(min-width: 600px) {
     align-content: left; 
     padding: 0; 
@@ -42,17 +44,23 @@ body {
 }
 
 select {
+  align-items: center; 
+  border-radius: 5px; 
   #categories {
   background-color: white; 
+  display: block; 
   }
 }
 
 .option-selector-items {
-  display: inline-block; 
-  position: relative; 
-  text-align: center; 
+  display: flex; 
+  align-items: center; 
+  flex-direction: column;
   margin-bottom: 1rem; 
   width: 100%; 
+  @media screen and (min-width: 600px) {
+    align-items: flex-start;
+  }
 }
 
 button, select {
@@ -109,23 +117,21 @@ a {
 .articles {
   width: 100%; 
   height: 100%; 
-  position: absolute; 
+  position: relative; 
+  display: flex; 
+  flex-direction: column-reverse;
 }
 
 .abstract {
-  position: relative;
+  width: 100%;  
+  position: absolute;
+  color: white; 
+  text-decoration: none; 
+  background-color: rgba(0, 0 ,0.5, 0.5); 
 }
 
-.abstract p {
-  width: 100%; 
-  height: auto; 
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 0;
-  color: white; 
-  padding: 10px; 
-  background-color: rgba(0, 0 ,0.5, 0.5); 
-  
+a .articles .abstract {
+  text-decoration: none; 
 }
 
 footer {

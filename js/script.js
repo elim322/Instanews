@@ -3,13 +3,13 @@ $(document).ready(function() {
   $("#categories").on("change", function() {
     $("#gif-loader").css("display", "block");
     $('.site-header').addClass("site-header-small");
-    //try appending loading.gif
+    
 
     var selectedStory = $("#categories").val();
-    // console.log("selectedStory");
+
 
     $(".article-boxes").empty();
-    // $(".gif-loader").show();
+
 
     var url =
       "https://api.nytimes.com/svc/topstories/v2/" + selectedStory + ".json";
@@ -19,27 +19,21 @@ $(document).ready(function() {
         "api-key": "015e1e546b504dcab3dd3878ebbdc372"
       });
 
-    //actual ajax request
     $.ajax({
       url: url,
       method: "GET"
     })
       .done(function(data) {
-        //data just represents the returned object from NYT api
-        // console.log(data);
-        // var formattedData = data.results;
-        // console.log(data.results);
-
         var onlyImg = data.results
           .filter(function(result) {
             return result.multimedia.length;
           })
           .slice(0, 12);
 
-        // $('#gif-loader').css('display','none');
+
 
         $.each(onlyImg, function(key, value) {
-          var html = "<a target= '_blank' href=" + value.url + ">" +
+          var html = "<a target='_blank' href=" + value.url + ">" +
             "<div class='articles' id='articles' style='background: url(" +
             value.multimedia[4].url + 
             "); background-size: cover;>";
@@ -49,8 +43,8 @@ $(document).ready(function() {
           html += "</div>" 
 
           html += "</a>"; 
+        
 
-          // console.log(value.multimedia[4].url);
           $(".article-boxes").append(html);
         });
        
@@ -65,5 +59,5 @@ $(document).ready(function() {
 
      
       });
-  }); // #top-stories change event
-}); //end of doc ready
+  });
+});//end of doc ready
