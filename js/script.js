@@ -36,11 +36,11 @@ $(document).ready(function() {
           var html = "<a target='_blank' href=" + value.url + ">" +
             "<div class='articles' id='articles' style='background: url(" +
             value.multimedia[4].url + 
-            "); background-size: cover;>";
+            "); background-size: cover; background-position: 50%;'>";
           
-          html += "<p class='abstract'>" + value.abstract + "</p>"
+          html += "<p class='abstract'>" + value.abstract + "</p>";
           
-          html += "</div>" 
+          html += "</div>"; 
 
           html += "</a>"; 
         

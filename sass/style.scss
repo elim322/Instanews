@@ -1,5 +1,4 @@
 @import 'partials/variables';
-// @import 'partials/mixins';
 @import 'partials/fonts';
 
 * {
@@ -123,11 +122,15 @@ a {
 }
 
 .abstract {
-  width: 100%;  
+  width: 100%; 
+  height: 20%;
   position: absolute;
   color: white; 
   text-decoration: none; 
-  background-color: rgba(0, 0 ,0.5, 0.5); 
+  background-color: rgba(0, 0 ,0.5, 0.7); 
+  font-family: 'Open Sans Light', sans-serif; 
+  font-size: 16px;
+  font-weight: 300px;
 }
 
 a .articles .abstract {
@@ -147,19 +150,3 @@ footer {
   font-size: 1rem; 
 }
 
-// @media screen and (min-width: 600px) {
-// .article {
-//   min-width: 50%;
-//   flex-direction: row; 
-// }
-// .site-header {
-//   text-align: left; 
-// }
-// }
-
-// @media screen and (min-width: 1000px) {
-// .article {
-//   min-width: 33.3%;
-//   flex-direction: row; 
-// }
-// }
