@@ -16,6 +16,9 @@
   @media screen and (min-width: 600px) {
     flex-wrap: nowrap; 
   }
+  @media screen and(min-width: 1000px) {
+    padding-top: 200px; 
+  }
 }
 
 .site-header-small {
@@ -132,6 +135,7 @@ a {
   font-family: 'Open Sans Light', sans-serif; 
   font-size: 16px;
   font-weight: 300px;
+  padding-left: 10px; 
 }
 
 a .articles .abstract {

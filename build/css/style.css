@@ -346,6 +346,9 @@ template {
     .site-header {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap; } }
+  @media screen and (min-width: 1000px) {
+    .site-header {
+      padding-top: 200px; } }
 
 .site-header-small {
   background-color: black;
@@ -471,7 +474,8 @@ a {
   background-color: rgba(0, 0, 1, 0.7);
   font-family: 'Open Sans Light', sans-serif;
   font-size: 16px;
-  font-weight: 300px; }
+  font-weight: 300px;
+  padding-left: 10px; }
 
 a .articles .abstract {
   text-decoration: none; }

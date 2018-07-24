@@ -19,11 +19,11 @@ $(document).ready(function() {
         "api-key": "015e1e546b504dcab3dd3878ebbdc372"
       });
 
-    $.ajax({
+    $.ajax({//ajax request 
       url: url,
       method: "GET"
     })
-      .done(function(data) {
+      .done(function(data) {//filter results for images only 
         var onlyImg = data.results
           .filter(function(result) {
             return result.multimedia.length;
@@ -32,11 +32,11 @@ $(document).ready(function() {
 
 
 
-        $.each(onlyImg, function(key, value) {
+        $.each(onlyImg, function(key, value) {//loop for pictures + articles
           var html = "<a target='_blank' href=" + value.url + ">" +
             "<div class='articles' id='articles' style='background: url(" +
             value.multimedia[4].url + 
-            "); background-size: cover; background-position: 50%;'>";
+            "); background-size: cover; background-position: center;'>";
           
           html += "<p class='abstract'>" + value.abstract + "</p>";
           
@@ -49,11 +49,11 @@ $(document).ready(function() {
         });
        
       })
-      .fail(function(err) {
+      .fail(function(err) {//error notification for failing to load
         console.log("request failed");
         $(".article-boxes").append("<h3>Sorry there was an error</h3>");
       })
-      .always(function() {
+      .always(function() {//always run gif loader whilst loading pictures 
         console.log("always run");
         $("#gif-loader").css("display", "none");
 
