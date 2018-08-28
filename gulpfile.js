@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     prettyError = require("gulp-prettyerror"),
     {src, task} = require('gulp');
     eslint = require('gulp-eslint');
+    babel = require("gulp-babel");
 
     gulp.task("sass", function() {
         return gulp
@@ -25,6 +26,15 @@ var gulp = require('gulp'),
           .pipe(rename("style.min.css"))
           .pipe(gulp.dest("./build/css"));
       });
+
+//babel task
+gulp.task("babel", () => {
+    return gulp
+      .src('./js/script.js')
+      .pipe(babel())
+      .pipe(gulp.dest('./build/js/'));
+  }); 
+
 //linting task 
 gulp.task('lint', function() {
     return src(['scripts/*.js'])
@@ -43,6 +53,7 @@ gulp.task('lint', function() {
 gulp.task("scripts", gulp.series( 'lint', function(){
     return gulp
         .src("./js/*.js") // these are files gulp will consume 
+        .pipe(babel())
         .pipe( uglify() ) // call uglify function on these files
         .pipe( rename({ extname: ".min.js"}) ) // rename ugly file
         .pipe( gulp.dest( "./build/js")); 

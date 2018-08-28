@@ -1,17 +1,17 @@
 $(document).ready(function() {
   //url for api request
   $("#categories").on("change", function() {
-    $("#gif-loader").css("display", "block");
+    $(".gif-loader").css("display", "block");
     $('.site-header').addClass("site-header-small");
     
 
-    var selectedStory = $("#categories").val();
+    let selectedStory = $("#categories").val();
 
 
     $(".article-boxes").empty();
 
 
-    var url =
+    let url =
       "https://api.nytimes.com/svc/topstories/v2/" + selectedStory + ".json";
     url +=
       "?" +
@@ -24,7 +24,7 @@ $(document).ready(function() {
       method: "GET"
     })
       .done(function(data) {//filter results for images only 
-        var onlyImg = data.results
+        let onlyImg = data.results
           .filter(function(result) {
             return result.multimedia.length;
           })
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 
         $.each(onlyImg, function(key, value) {//loop for pictures + articles
-          var html = "<a target='_blank' href=" + value.url + ">" +
+          let html = "<a target='_blank' href=" + value.url + ">" +
             "<div class='articles' id='articles' style='background: url(" +
             value.multimedia[4].url + 
             "); background-size: cover; background-position: center;'>";
@@ -55,7 +55,7 @@ $(document).ready(function() {
       })
       .always(function() {//always run gif loader whilst loading pictures 
         console.log("always run");
-        $("#gif-loader").css("display", "none");
+        $(".gif-loader").css("display", "none");
 
      
       });

@@ -418,10 +418,10 @@ button, select {
       display: -ms-flexbox;
       display: flex; } }
 
-#gif-loader {
+.gif-loader {
   display: none;
-  height: 100px;
-  width: 100px; }
+  max-height: 10%;
+  max-width: 10%; }
 
 .article-boxes {
   display: -webkit-box;
