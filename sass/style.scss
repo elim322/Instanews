@@ -47,6 +47,7 @@
 body {
     background-color: black;
     color: white;
+    font-family: 'Open Sans', serif;
 }
 
 select {
@@ -87,8 +88,8 @@ select {
 
 .gif-loader {
   display: none; 
-  max-height: 10%;
-  max-width: 10%;
+  max-height: 30%;
+  max-width: 30%;
 }
 
 .article-boxes {

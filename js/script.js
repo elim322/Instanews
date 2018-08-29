@@ -44,14 +44,17 @@ $(document).ready(function() {
 
           html += "</a>"; 
         
-
+          //adding additional CSS
           $(".article-boxes").append(html);
           $('.site-header').css({
             'padding-left':'1.5rem',
             'height':'12rem',
           });
           $('.NYT-logo').css({
-            'padding':'0',
+            'padding-top':'1rem',
+            'padding-bottom':'0',
+            'padding-left':'0',
+            'padding-right':'0',
           });
           $('.NYT-logo img').css({
             'max-width': '60%',
