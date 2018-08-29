@@ -1,6 +1,7 @@
 @import 'partials/normalize';
 @import 'partials/variables';
 @import 'partials/fonts';
+@import 'partials/mixins';
 * {
     box-sizing: border-box;
     outline: none;
@@ -29,29 +30,34 @@
         margin: 0;
     }
 }
-
-img {
+.NYT-logo {
+  padding: 0 4rem;
+  img {
     height: 100%;
     max-width: 100%;
     @media screen and(min-width: 600px) {
-        height: 60%;
-        max-width: 75%;
-        padding-left: 50px;
+        height: auto;
+        max-width: 100%;
+}
+
+
     }
 }
 
 body {
     background-color: black;
     color: white;
+    font-family: 'Open Sans', sans-serif;
 }
 
 select {
     align-items: center;
     border-radius: 5px;
-    #categories {
+    .categories {
         background-color: white;
         display: block;
     }
+    
 }
 
 .option-selector-items {
@@ -74,6 +80,7 @@ select {
 .option-selector-items {
     p {
         color: white;
+        font-family: 'Open Sans', sans-serif;
         @media screen and (min-width: 600px) {
             display: flex;
         }
@@ -129,7 +136,7 @@ a {
     color: white;
     text-decoration: none;
     background-color: rgba(0, 0, 0.5, 0.7);
-    font-family: 'Open Sans Light', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 300px;
     padding-left: 10px;
@@ -152,4 +159,5 @@ footer {
 .copyright {
     color: #c2c2c2;
     font-size: 1rem;
+    font-weight: 200;
 }

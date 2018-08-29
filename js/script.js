@@ -1,11 +1,11 @@
 $(document).ready(function() {
   //url for api request
-  $("#categories").on("change", function() {
+  $(".categories").on("change", function() {
     $(".gif-loader").css("display", "block");
     $('.site-header').addClass("site-header-small");
     
 
-    let selectedStory = $("#categories").val();
+    let selectedStory = $(".categories").val();
 
 
     $(".article-boxes").empty();
@@ -46,6 +46,20 @@ $(document).ready(function() {
         
 
           $(".article-boxes").append(html);
+          $('.site-header').css({
+            'padding-left':'1.5rem',
+            'height':'12rem',
+          });
+          $('.NYT-logo').css({
+            'padding':'0',
+          });
+          $('.NYT-logo img').css({
+            'max-width': '60%',
+            'height': '60%',
+          });
+          $('.option-selector-items').css({
+            'padding-top':'0.8rem',
+          });
         });
        
       })
