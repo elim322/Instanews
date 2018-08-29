@@ -377,8 +377,7 @@ template {
 
 body {
   background-color: black;
-  color: white;
-  font-family: 'Open Sans', sans-serif; }
+  color: white; }
 
 select {
   -webkit-box-align: center;
@@ -418,8 +417,7 @@ select {
           justify-content: flex-start; }
 
 .option-selector-items p {
-  color: white;
-  font-family: 'Open Sans', sans-serif; }
+  color: white; }
   @media screen and (min-width: 600px) {
     .option-selector-items p {
       display: -webkit-box;
@@ -480,7 +478,6 @@ a {
   color: white;
   text-decoration: none;
   background-color: rgba(0, 0, 1, 0.7);
-  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 300px;
   padding-left: 10px; }

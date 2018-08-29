@@ -13,10 +13,10 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 2rem;
-    @media screen and (min-width: 600px) {
+    @include tablet {
         flex-wrap: nowrap;
     }
-    @media screen and(min-width: 1000px) {
+    @include desktop {
         padding-top: 200px;
     }
 }
@@ -24,7 +24,7 @@
 .site-header-small {
     background-color: black;
     align-content: center;
-    @media screen and(min-width: 600px) {
+    @include tablet {
         align-content: left;
         padding: 0;
         margin: 0;
@@ -35,7 +35,7 @@
   img {
     height: 100%;
     max-width: 100%;
-    @media screen and(min-width: 600px) {
+    @include tablet {
         height: auto;
         max-width: 100%;
 }
@@ -47,7 +47,6 @@
 body {
     background-color: black;
     color: white;
-    font-family: 'Open Sans', sans-serif;
 }
 
 select {
@@ -66,7 +65,7 @@ select {
     flex-direction: column;
     margin-bottom: 1rem;
     width: 100%;
-    @media screen and (min-width: 600px) {
+    @include tablet {
         align-items: flex-start;
     }
 }
@@ -80,8 +79,7 @@ select {
 .option-selector-items {
     p {
         color: white;
-        font-family: 'Open Sans', sans-serif;
-        @media screen and (min-width: 600px) {
+        @include tablet {
             display: flex;
         }
     }
@@ -96,7 +94,7 @@ select {
 .article-boxes {
     display: flex;
     flex-wrap: wrap;
-    @media screen and (min-width: 600px) {
+    @include tablet {
         .article-boxes {
             flex-direction: row;
         }
@@ -110,12 +108,12 @@ a {
     width: 100%;
     position: relative;
     color: white;
-    @media screen and (min-width: 600px) {
+    @include tablet {
         max-width: 50%;
         height: 420px;
         position: relative;
     }
-    @media screen and (min-width: 1000px) {
+    @include desktop {
         max-width: 33%;
         height: 420px;
     }
@@ -136,7 +134,6 @@ a {
     color: white;
     text-decoration: none;
     background-color: rgba(0, 0, 0.5, 0.7);
-    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 300px;
     padding-left: 10px;
@@ -149,7 +146,7 @@ a .articles .abstract {
 footer {
     display: flex;
     justify-content: center;
-    @media screen and (min-width: 1000px) {
+    @include desktop {
         justify-content: left;
         margin-left: 10px;
         margin-top: 200px;
