@@ -44,25 +44,11 @@ $(document).ready(function() {
 
           html += "</a>"; 
         
-          //adding additional CSS
+       
           $(".article-boxes").append(html);
-          $('.site-header').css({
-            'padding-left':'1.5rem',
-            'height':'12rem',
-          });
-          $('.NYT-logo').css({
-            'padding-top':'1rem',
-            'padding-bottom':'0',
-            'padding-left':'0',
-            'padding-right':'0',
-          });
-          $('.NYT-logo img').css({
-            'max-width': '60%',
-            'height': '60%',
-          });
-          $('.option-selector-items').css({
-            'padding-top':'0.8rem',
-          });
+   //adding additional CSS
+          $('footer').addClass('footer-desktop');
+          $('body').addClass('body-results');
         });
        
       })
